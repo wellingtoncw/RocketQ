@@ -30,6 +30,7 @@ html {
 }
 
 body {
+    display: flex;
     height: 100vh; /*pega a altura total da tela*/
     /* width: 100vw; pega a largura total da tela*/
     background: var(--background)
