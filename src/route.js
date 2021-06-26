@@ -10,5 +10,5 @@ route.get('/create-pass', (req, res) => res.render('index', {page: 'create-pass'
 route.get('/room', (req, res) => res.render('room'))
 //Formato que o formulário de dentro da modal tem que passar a informação
 route.post('/room/:room/:question/:action', QuestionController.index) // os : é uma variável pra receber o conteúdo que virá da outra pagina
-rout.post('/room/create-room', RoomController.create)
+route.post('/room/create-room', RoomController.create)
 module.exports = route //exporta a constante route
