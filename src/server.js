@@ -11,6 +11,9 @@ server.use(express.static("public")) //usa a pasta onde ficam guardados os arqui
 //define para o express que o caminho não é mais somente e pasta views mas o caminho roquetq/src/views
 server.set('views', path.join(__dirname, 'views')) //path pega o caminho da pasta onde está o projeto. O join é de juntar. __dirname é uma variável global que se transforma na pasta onde o arquivo atual está. Ou seja, (__dirname = src/). No final junta a pasta view. Caminho final = rocketq/src/views
 
+//pega o conteudo que esta vindo do form, decodifica e envia pro Controller
+server.use(express.urlencoded({extended: true}))
+
 server.use(route) // express usando o arquivo route
 
 server.listen(3000, () => console.log('RODANDO')) //arrow function significa falar pro js que iremos rodar uma funcionalidade

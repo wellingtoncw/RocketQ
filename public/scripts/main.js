@@ -24,6 +24,13 @@ deleteButton.forEach(button => {
 function handleClick(event, check = true) {
     event.preventDefault() // para a tag a não se comportar como link
     const text = check ? "Marcar como lida" : "Excluir"
+    const slug = check ? "check" : "delete"
+    const roomId = document.querySelector("#room-id").dataset.id
+    const questionId = event.target.dataset.id
+
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`) //url pra onde o formulário vai
+
     modalTitle.innerHTML = `${text} esta pergunta`
     modalDescription.innerHTML = `Ter certeza que deseja ${text.toLowerCase()} esta pergunta?`
     modalButton.innerHTML = `Sim, ${text.toLowerCase()}`
