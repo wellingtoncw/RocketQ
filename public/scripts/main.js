@@ -29,7 +29,7 @@ function handleClick(event, check = true) {
     const questionId = event.target.dataset.id
 
     const form = document.querySelector(".modal form")
-    form.setAttribute("action", `/room/${roomId}/${questionId}/${slug}`) //url pra onde o formulário vai
+    form.setAttribute("action", `/question/${roomId}/${questionId}/${slug}`) //url pra onde o formulário vai
 
     modalTitle.innerHTML = `${text} esta pergunta`
     modalDescription.innerHTML = `Ter certeza que deseja ${text.toLowerCase()} esta pergunta?`
